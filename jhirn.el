@@ -3,11 +3,9 @@
 (progn (cd "~/.emacs.d/vendor")
        (normal-top-level-add-subdirs-to-load-path))
 
-
-
 (map 'list (lambda (f) (load-file (concat  dotfiles-dir "/figs/" f)))
-     (list "color-theme.el"
-           "colors.el"))
+     (list "colors.el"
+           "move-backups.el"))
 
 
 ;; Path fuckery 
@@ -24,3 +22,5 @@
 (global-set-key (kbd "M-z") 'undo)
 (global-set-key (kbd "M-l") 'goto-line)
 (global-set-key (kbd "TAB") 'hippie-expand)
+
+(pastels-color-theme)
