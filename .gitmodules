@@ -1,0 +1,12 @@
+[submodule "vendor/rspec-mode"]
+	path = vendor/rspec-mode
+	url = http://github.com/pezra/rspec-mode.git
+[submodule "vendor/rvm"]
+	path = vendor/rvm
+	url = http://github.com/senny/rvm.el.git
+[submodule "vendor/rsense"]
+	path = vendor/rsense
+	url = http://github.com/m2ym/rsense.git
+[submodule "vendor/find-in-project"]
+	path = vendor/find-in-project
+	url = http://github.com/technomancy/find-file-in-project.git
