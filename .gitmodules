@@ -10,3 +10,6 @@
 [submodule "vendor/find-in-project"]
 	path = vendor/find-in-project
 	url = http://github.com/technomancy/find-file-in-project.git
+[submodule "vendor/cucumber"]
+	path = vendor/cucumber
+	url = http://github.com/michaelklishin/cucumber.el.git

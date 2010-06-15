@@ -27,12 +27,16 @@
 (global-set-key (kbd "C-S-f") 'indent-buffer)
 
 
+
 (pastels-color-theme)
 
 (require 'rspec-mode)
 (rspec-mode)
 (require 'rvm)
-(rvm-use-default)
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+
+
 (server-start)
 
 (defun maximize-frame ()
@@ -42,7 +46,8 @@
 
 (set-frame-parameter (selected-frame) 'alpha '(92 70))
 
-(ansi-color-for-comint-mode-on)
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 
 
