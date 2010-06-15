@@ -23,7 +23,7 @@
 
 (global-set-key (kbd "M-z") 'undo)
 (global-set-key (kbd "M-l") 'goto-line)
-(global-set-key (kbd "TAB") 'hippie-expand)
+;(global-set-key (kbd "TAB") 'hippie-expand)
 (global-set-key (kbd "C-S-f") 'indent-buffer)
 
 
@@ -49,5 +49,7 @@
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-
-
+;;autocomplete
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories (concat dotfiles-dir "vendor/auto-complete-1.3/dict"))
+(ac-config-default)
