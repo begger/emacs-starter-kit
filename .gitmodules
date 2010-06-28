@@ -13,3 +13,6 @@
 [submodule "vendor/cucumber"]
 	path = vendor/cucumber
 	url = http://github.com/michaelklishin/cucumber.el.git
+[submodule "vendor/textmate"]
+	path = vendor/textmate-mode
+	url = http://github.com/defunkt/textmate.el.git

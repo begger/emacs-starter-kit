@@ -9,11 +9,12 @@
 
 
 ;; Path fuckery 
-(setenv "PATH" (concat "/opt/local/bin" ":" "/usr/local/mongo/bin" ":" (getenv "PATH")))
+(setenv "PATH" (concat "/opt/local/bin" ":"
+                       "/usr/local/mongo/bin" ":"
+                       (getenv "PATH")))
 (setq exec-path (append exec-path '("/opt/local/bin")))
 (setq exec-path (append exec-path '("/usr/local/mongo/bin")))
 
-;;(setq magit-git-executable "/usr/local/git/bin/git")
 
 ;; Keybinding
 (setq
@@ -41,7 +42,7 @@
 
 (defun maximize-frame ()
   (interactive)
-  (set-frame-position (selected-frame) 0 0)
+  :(set-frame-position (selected-frame) 0 0)
   (set-frame-size (selected-frame) 1000 1000))
 
 (set-frame-parameter (selected-frame) 'alpha '(92 70))
@@ -53,3 +54,16 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories (concat dotfiles-dir "vendor/auto-complete-1.3/dict"))
 (ac-config-default)
+
+;;rsense
+;;(setq rsense-home (concat dotfiles-dir "vendor/rsense/rsense-0.3"))
+;;(add-to-list 'load-path (concat rsense-home "/etc"))
+;;(require 'rsense)
+
+;;textmate mode
+
+(require 'textmate)
+(textmate-mode)
+
+
+(require 'yasnippet)
