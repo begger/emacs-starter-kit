@@ -67,3 +67,5 @@
 
 
 (require 'yasnippet)
+(yas/load-directory (concat dotfiles-dir "/vendor/yasnippet-0.6.1c/snippets"))
+(yas/load-directory (concat dotfiles-dir "/vendor/cucumber/snippets"))
