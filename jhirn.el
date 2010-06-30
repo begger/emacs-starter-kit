@@ -56,10 +56,13 @@
 (ac-config-default)
 
 ;;rsense
-;;(setq rsense-home (concat dotfiles-dir "vendor/rsense/rsense-0.3"))
-;;(add-to-list 'load-path (concat rsense-home "/etc"))
-;;(require 'rsense)
-
+(setq rsense-home (concat dotfiles-dir "vendor/rsense/rsense-0.3"))
+(add-to-list 'load-path (concat rsense-home "/etc"))
+(require 'rsense)
+(add-hook 'ruby-mode-hook
+          (lambda ()
+            (add-to-list 'ac-sources 'ac-source-rsense-method)
+            (add-to-list 'ac-sources 'ac-source-rsense-constant)))
 ;;textmate mode
 
 (require 'textmate)
