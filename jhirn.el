@@ -85,14 +85,14 @@
 (require 'yasnippet)
 (yas/load-directory (concat dotfiles-dir "vendor/yasnippet-0.6.1c/snippets"))
 (yas/load-directory (concat dotfiles-dir "vendor/cucumber/snippets"))
-(yas/minor-mode on)
+(yas/minor-mode-on)
 
 ;;packin a mac in the back of the ack
 (require 'ack-emacs)
 (require 'ack-in-project)
 
-(load-file (concat dotfiles-dir "vendor/cedet-1.0pre7/common/cedet.el"))
-(global-ede-mode 1)                      ; Enable the Project management system
-(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
-(global-srecode-minor-mode 1)            ; Enable template insertion menu
+;(load-file (concat dotfiles-dir "vendor/cedet-1.0pre7/common/cedet.el"))
+;(global-ede-mode 1)                      ; Enable the Project management system
+;(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
+;(global-srecode-minor-mode 1)            ; Enable template insertion menu
 
