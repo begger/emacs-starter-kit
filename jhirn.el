@@ -3,52 +3,66 @@
 (progn (cd "~/.emacs.d/vendor")
        (normal-top-level-add-subdirs-to-load-path))
 
+;; Add my personal figs
 (map 'list (lambda (f) (load-file (concat  dotfiles-dir "/figs/" f)))
      (list "colors.el"
            "move-backups.el"))
 
 
-;; Path fuckery 
+;; Path fuckery thanks to OSX not honoring .bash_profiles... 
 (setenv "PATH" (concat "/opt/local/bin" ":"
                        "/usr/local/mongo/bin" ":"
                        (getenv "PATH")))
 (setq exec-path (append exec-path '("/opt/local/bin")))
 (setq exec-path (append exec-path '("/usr/local/mongo/bin")))
 
+(defun maximize-frame ()
+  (interactive)
+  (set-frame-position (selected-frame) 0 0)
+  (set-frame-size (selected-frame) 1000 1000))
 
-;; Keybinding
+;; Keyboard and mouse
 (setq
-  ns-command-modifier   'meta       ; Apple/Command key is Meta
-  ns-alternate-modifier 'super      ; Option is the Mac Option key
-  )
+ ns-command-modifier   'meta       ; Apple/Command key is Meta
+ ns-alternate-modifier 'super      ; Option is the Mac Option key
+ mouse-wheel-scroll-amount '(1)
+ mouse-wheel-progressive-speed nil
+ )
 
 (global-set-key (kbd "M-z") 'undo)
 (global-set-key (kbd "M-l") 'goto-line)
-;(global-set-key (kbd "TAB") 'hippie-expand)
 (global-set-key (kbd "C-S-f") 'indent-buffer)
 
 
+(defun my-revert-buffer()
+  "revert buffer without asking for confirmation"
+   (interactive "")
+   (revert-buffer t t)
+   )
 
+(global-set-key (kbd "C-x C-v") 'my-revert-buffer)
+
+;;You are... so beautiful... to meeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 (pastels-color-theme)
+(set-frame-parameter (selected-frame) 'alpha '(94 75))
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
+;;rspec-mode
 (require 'rspec-mode)
 (rspec-mode)
+
+;;rvm-mode
 (require 'rvm)
+
+;;cucumber
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
 
 (server-start)
 
-(defun maximize-frame ()
-  (interactive)
-  :(set-frame-position (selected-frame) 0 0)
-  (set-frame-size (selected-frame) 1000 1000))
 
-(set-frame-parameter (selected-frame) 'alpha '(92 70))
-
-(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;;autocomplete
 (require 'auto-complete-config)
@@ -64,15 +78,21 @@
             (add-to-list 'ac-sources 'ac-source-rsense-method)
             (add-to-list 'ac-sources 'ac-source-rsense-constant)))
 ;;textmate mode
-
 (require 'textmate)
 (textmate-mode)
 
-
+;;yasnippet
 (require 'yasnippet)
 (yas/load-directory (concat dotfiles-dir "vendor/yasnippet-0.6.1c/snippets"))
 (yas/load-directory (concat dotfiles-dir "vendor/cucumber/snippets"))
+(yas/minor-mode on)
 
-
+;;packin a mac in the back of the ack
 (require 'ack-emacs)
 (require 'ack-in-project)
+
+(load-file (concat dotfiles-dir "vendor/cedet-1.0pre7/common/cedet.el"))
+(global-ede-mode 1)                      ; Enable the Project management system
+(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
+(global-srecode-minor-mode 1)            ; Enable template insertion menu
+
