@@ -1,0 +1,601 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+-------------------------------------------------------------- */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+body { 
+  line-height: 1.5; 
+
+}
+
+/* Tables still need 'cellspacing="0"' in the markup. */
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { text-align: left; font-weight: normal; }
+table, td, th { vertical-align: middle; }
+
+/* Remove possible quote marks (") from <q>, <blockquote>. */
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+
+/* Remove annoying border on linked images. */
+a img { border: none; }
+/* -------------------------------------------------------------- 
+   
+   typography.css
+   * Sets up some sensible default typography.
+   
+-------------------------------------------------------------- */
+
+/* Default font settings. 
+   The font-size percentage is of 16px. (0.75 * 16px = 12px) */
+body { 
+  font-size: 75%;
+  color: #222; 
+  background: #fff;
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+
+
+/* Headings
+-------------------------------------------------------------- */
+
+h1,h2,h3,h4,h5,h6 { font-weight: normal; color: #111; }
+
+h1 { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
+h2 { font-size: 2em; margin-bottom: 0.75em; }
+h3 { font-size: 1.5em; line-height: 1; margin-bottom: 1em; }
+h4 { font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em; }
+h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
+h6 { font-size: 1em; font-weight: bold; }
+
+h1 img, h2 img, h3 img, 
+h4 img, h5 img, h6 img {
+  margin: 0;
+}
+
+
+/* Text elements
+-------------------------------------------------------------- */
+
+p           { margin: 0 0 1.5em; }
+p img.left  { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
+p img.right { float: right; margin: 1.5em 0 1.5em 1.5em; }
+
+a:focus, 
+a:hover     { color: #ff9c5a; }
+a           { color: #ff6600; text-decoration: none; outline: none; }
+
+blockquote  { margin: 1.5em; color: #666; font-style: italic; }
+strong      { font-weight: bold; }
+em,dfn      { font-style: italic; }
+dfn         { font-weight: bold; }
+sup, sub    { line-height: 0; }
+
+abbr, 
+acronym     { border-bottom: 1px dotted #666; }
+address     { margin: 0 0 1.5em; font-style: italic; }
+del         { color:#666; }
+
+pre 				{ margin: 1.5em 0; white-space: pre; }
+pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; }
+
+
+/* Lists
+-------------------------------------------------------------- */
+
+li ul, 
+li ol       { margin:0 1.5em; }
+ul, ol      { margin: 0 1.5em 1.5em 1.5em; }
+
+ul          { list-style-type: disc; }
+ol          { list-style-type: decimal; }
+
+dl          { margin: 0 0 1.5em 0; }
+dl dt       { font-weight: bold; }
+dd          { margin-left: 1.5em;}
+
+
+/* Tables
+-------------------------------------------------------------- */
+
+table       { margin-bottom: 1.4em; width:100%; }
+th          { font-weight: bold; }
+thead th 		{ background: #c3d9ff; }
+th,td,caption { padding: 4px 10px 4px 5px; }
+tr.even td  { background: #e5ecf9; }
+tfoot       { font-style: italic; }
+caption     { background: #eee; }
+
+
+/* Misc classes
+-------------------------------------------------------------- */
+
+.small      { font-size: .8em; margin-bottom: 1.875em; line-height: 1.875em; }
+.large      { font-size: 1.2em; line-height: 2.5em; margin-bottom: 1.25em; }
+.hide       { display: none; }
+
+.quiet      { color: #666; }
+.loud       { color: #000; }
+.highlight  { background:#ff0; }
+.added      { background:#060; color: #fff; }
+.removed    { background:#900; color: #fff; }
+
+.first      { margin-left:0; padding-left:0; }
+.last       { margin-right:0; padding-right:0; }
+.top        { margin-top:0; padding-top:0; }
+.bottom     { margin-bottom:0; padding-bottom:0; }
+
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	background: transparent url(/images/bg.jpg) center center no-repeat;
+}
+
+
+#wrap {
+	position:absolute;
+	height:700px;
+	width:700px;
+	top: 50%;
+	left: 50%;
+	color: #fff;
+	margin-top: -229px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: -300px;
+}
+
+#header {
+	height: 55px;
+	overflow: hidden;
+	zoom: 1;
+	display: block;
+	position: relative;
+}
+
+#LANchamp {
+	display: block;
+	height: 55px;
+	width: 0px;
+	float: left;
+}
+
+#en #LANchamp {
+	background: transparent url(/images//menu-en.png) top left no-repeat;
+}
+
+
+#menu {
+	list-style-type: none;
+	overflow: hidden;
+	zoom: 1;
+	margin: 0;
+	padding: 0;
+	float: left;
+	width: 648px;
+	height: 55px;
+	display: block;
+}
+
+#menu li {
+	float: left;
+	display: block;
+	height: 55px;
+}
+
+#menu a {
+	position: relative;
+	display: block;
+	height: 55px;
+}
+
+#en #menu .about {
+	width: 80px;
+}
+
+#en #menu .league_info {
+	width: 101px;
+}
+
+#en #menu .teams {
+	width: 80px;
+}
+
+#en #menu .schedule {
+	width: 101px;
+}
+#en #menu .bracket {
+	width: 101px;
+}
+
+#en #menu .media {
+	width: 101px;
+}
+
+#en #menu .lc_about {
+	width: 82px;
+}
+
+
+
+#menu span {
+	top: 0px;
+	left: 0px;
+	height: 55px;
+	display: block;
+	position: absolute;
+	text-indent: -9999px;
+	z-index: 10;
+}
+
+#en #menu span {
+	background: transparent url(../img/menu-en.png) no-repeat;
+}
+
+#menu span.hover {
+	z-index: 20;
+}
+
+#menu span.on {
+	z-index: 30;
+	display: none;
+}
+
+#en #menu .about span {
+	width: 80px;
+	background-position: -0px 0px;
+}
+#en #menu .league_info span {
+	width: 101px;
+	background-position: -93px 0;
+}
+#en #menu .teams span {
+	width: 80px;
+	background-position: -194px 0;
+}
+
+#en #menu .schedule span {
+	width: 101px;
+	background-position: -274px 0;
+}
+
+#en #menu .bracket span {
+	width: 101px;
+	background-position: -375px 0;
+}
+
+#en #menu .media span {
+	width: 101px;
+	background-position: -476px 0;
+}
+#en #menu .lc_about span {
+	width: 82px;
+	background-position: -577px 0px;
+}
+
+#en #menu .about span.hover {
+	background-position: -0px -60px;
+}
+#en #menu .league_info span.hover {
+	background-position: -93px -60px;
+}
+#en #menu .teams span.hover {
+	background-position: -194px -60px;
+}
+
+#en #menu .schedule span.hover {
+	background-position: -274px -60px;
+}
+
+#en #menu .bracket span.hover {
+	background-position: -375px -60px;
+}
+
+#en #menu .media span.hover {
+	background-position: -476px -60px;
+}
+#en #menu .lc_about span.hover {
+	background-position: -577px -60px;
+}
+
+#en #menu .about span.on {
+	background-position: -0px -120px;
+}
+#en #menu .league_info span.on {
+	background-position: -93px -120px;
+}
+#en #menu .teams span.on {
+	background-position: -194px -120px;
+}
+
+#en #menu .schedule span.on {
+	background-position: -274px -120px;
+}
+
+#en #menu .bracket span.on {
+	background-position: -375px -120px;
+}
+
+#en #menu .media span.on {
+	background-position: -476px -120px;
+}
+#en #menu .lc_about span.on {
+	background-position: -577px -120px;
+}
+
+
+#view {
+	display: none;
+}
+
+#title {
+	display: block;
+	height: 30px;
+	background: transparent url(../img/bg-title.png) top left no-repeat;
+	position: relative;
+}
+
+
+#content {
+	overflow: hidden;
+}
+
+#slider {
+	display: block;
+	background: transparent url(../img/bg-content.png) bottom left no-repeat;
+	min-height: 30px;
+	padding: 10px 0 0 0;
+}
+
+#slider .content {
+	overflow: hidden;
+	zoom: 1;
+	padding: 0 20px 20px 20px;
+}
+
+
+#slider .content h1 {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+.content.about {
+	
+	
+}
+
+.content.league_info {
+	display: none;
+}
+
+.content.teams {
+	display: none;
+}
+
+.content.schedule {
+	display: none;
+}
+.content.bracket {
+	display: none;
+}
+
+.content.media {
+	display: none;
+}
+
+.content.lc_about {
+	display: none;
+}
+.content.about .left {
+	width: 440px;
+	float: left;
+	font-size: 1.3em;
+}
+
+.content.about .right {
+	width: 180px;
+	float: right;
+}
+
+.content.about p {
+	margin: 0;
+}
+
+.content.networks .wrap {
+	overflow: hidden;
+	zoom: 1;
+	margin: 0 0 10px 0;
+}
+
+.content.networks .wrap .left {
+	float: left;
+	width: 200px;
+	overflow: hidden;
+	zoom: 1;
+	position: relative;
+}
+
+.content.networks .wrap .right {
+	float: right;
+	width: 210px;
+	overflow: hidden;
+	zoom: 1;
+	position: relative;
+}
+
+.content.networks .hover {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+
+}
+
+.content.networks .wrap .left .hover {
+	background: transparent url(../img/networks-hover.png) top left no-repeat;
+	width: 200px;
+	height: 48px;
+}
+
+.content.networks .wrap .right .hover {
+	background: transparent url(../img/networks-hover.png) top right no-repeat;
+	width: 210px;
+	height: 48px;
+}
+
+.content.networks .icon {
+	display: block;
+	height: 48px;
+	width: 48px;
+	background: transparent url(../img/icons.png) no-repeat;
+	float: left;
+	position: relative;
+	z-index: 10
+}
+
+.content.networks .text {
+	position: relative;
+	z-index: 10
+}
+
+.content.networks .title {
+	text-transform: uppercase;
+	font-size: 1.3em;
+	margin: 7px 0 0 0;
+	line-height: 0.9em;
+}
+
+.content.networks .url {
+	line-height: 1em;
+}
+
+
+
+.content.contact li {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.content.contact .label {
+	text-transform: uppercase;
+	width: 160px;
+	float: left;
+	margin: 0 10px 0 0;
+	color: #666;
+}
+
+.content.contact .label span {
+	float: right
+}
+
+.content.contact .text {
+	float: left;
+	width: 245px;
+}
+
+#footer {
+	position: relative;
+}
+
+#footer .buttons {
+	display: block;
+	overflow: hidden;
+	zoom: 1;
+	position: relative;
+	z-index: 20;
+}
+
+
+#footer .wrap {
+	float: right;
+	display: block;
+}
+
+#footer .buttons  a {
+	float: left;
+	width: 36px;
+	height: 40px;
+	display: block;
+	background: transparent url(../img/footer-button.png) no-repeat;
+	text-indent: -9999px;
+
+}
+
+#footer .buttons .wof {
+	background-position: 0 0;
+}
+
+#footer .buttons .more {
+	background-position: -36px 0;
+}
+
+#footer .buttons .wof:hover {
+	background-position: 0 -40px;
+}
+
+#footer .buttons .more:hover {
+	background-position: -36px -40px;
+}
+
+#footer .buttons .more.open {
+	background-position: -36px -80px;
+}
+
+
+#yadda-box {
+	width: 382px;
+	height: 121px;
+	background: transparent url(../img/yadda-box.png) top left no-repeat;
+	position: absolute;
+	top: 0;
+	left: 50px;
+	z-index: 10;
+}
+
+#yadda-box .inner {
+	padding: 20px;
+}
+
+
+#yadda-box p {
+	margin: 0 0 0.2em 0;
+}
+
+
+
+
+.yt_holder { padding:0px; position:relative; }
+#demoyoutube {margin:5px 0 0 4px; padding:0px; width:422px; border:2px  height:120px;  }
+
+#ytvideo { width:640px; margin:0px; padding:2px 0 0 2px; }
+#demoyoutube li {background-image:none; width:100px; float:left; padding:0px; margin-right: 3px; }
+#demoyoutube img {width:100px;  }
+#demoyoutube li a { color:#FFF; font-weight:normal;margin-left:2px; background-image:none; }
+#demoyoutube li span {margin:0 0 0 6px; font-size:0.85em; display:block;}
+
+

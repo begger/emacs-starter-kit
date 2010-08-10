@@ -1,0 +1,1 @@
+document.write('<img src="http://quickribbon.com/ribbon/2010/07/54864b4d50df01c596721d41ea8c49a7.gif" border="0" width="150" height="150" style="position:absolute; right:0px; top:0px; margin:0px; padding:0px">')
