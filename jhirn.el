@@ -11,7 +11,7 @@
 
 ;; Path fuckery thanks to OSX not honoring .bash_profiles... 
 (setenv "PATH" (concat "/opt/local/bin" ":"
-                       "/usr/local/mongo/bin" ":"
+                       "/usr/local/bin" ":"
                        (getenv "PATH")))
 (setq exec-path (append exec-path '("/opt/local/bin")))
 (setq exec-path (append exec-path '("/usr/local/mongo/bin")))
