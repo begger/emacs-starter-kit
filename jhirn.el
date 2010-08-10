@@ -10,11 +10,11 @@
 
 
 ;; Path fuckery thanks to OSX not honoring .bash_profiles... 
-(setenv "PATH" (concat "/opt/local/bin" ":"
-                       "/usr/local/mongo/bin" ":"
-                       (getenv "PATH")))
-(setq exec-path (append exec-path '("/opt/local/bin")))
-(setq exec-path (append exec-path '("/usr/local/mongo/bin")))
+                                        ;(setenv "PATH" (concat "/opt/local/bin" ":"
+                                        ;                      "/usr/local/mongo/bin" ":"
+                                        ;                      (getenv "PATH")))
+                                        ;(setq exec-path (append exec-path '("/opt/local/bin")))
+                                        ;(setq exec-path (append exec-path '("/usr/local/mongo/bin")))
 
 (defun maximize-frame ()
   (interactive)
@@ -36,9 +36,9 @@
 
 (defun my-revert-buffer()
   "revert buffer without asking for confirmation"
-   (interactive "")
-   (revert-buffer t t)
-   )
+  (interactive "")
+  (revert-buffer t t)
+  )
 
 (global-set-key (kbd "C-x C-v") 'my-revert-buffer)
 
@@ -90,9 +90,4 @@
 ;;packin a mac in the back of the ack
 (require 'ack-emacs)
 (require 'ack-in-project)
-
-;(load-file (concat dotfiles-dir "vendor/cedet-1.0pre7/common/cedet.el"))
-;(global-ede-mode 1)                      ; Enable the Project management system
-;(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
-;(global-srecode-minor-mode 1)            ; Enable template insertion menu
 
