@@ -6,7 +6,8 @@
 ;; Add my personal figs
 (map 'list (lambda (f) (load-file (concat  dotfiles-dir "/figs/" f)))
      (list "colors.el"
-           "move-backups.el"))
+           "move-backups.el"
+           "tidy.el"))
 
 
 ;; Path fuckery thanks to OSX not honoring .bash_profiles... 
@@ -21,18 +22,6 @@
   (set-frame-position (selected-frame) 0 0)
   (set-frame-size (selected-frame) 1000 1000))
 
-;; Keyboard and mouse
-(setq
- ns-command-modifier   'meta       ; Apple/Command key is Meta
- ns-alternate-modifier 'super      ; Option is the Mac Option key
- mouse-wheel-scroll-amount '(1)
- mouse-wheel-progressive-speed nil
- )
-
-(global-set-key (kbd "M-z") 'undo)
-(global-set-key (kbd "M-l") 'goto-line)
-(global-set-key (kbd "C-S-f") 'indent-buffer)
-
 
 (defun my-revert-buffer()
   "revert buffer without asking for confirmation"
@@ -40,7 +29,6 @@
   (revert-buffer t t)
   )
 
-(global-set-key (kbd "C-x C-v") 'my-revert-buffer)
 
 ;;You are... so beautiful... to meeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 (pastels-color-theme)
@@ -59,10 +47,7 @@
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
-
 (server-start)
-
-
 
 ;;autocomplete
 (require 'auto-complete-config)
@@ -70,13 +55,15 @@
 (ac-config-default)
 
 ;;rsense
-(setq rsense-home (concat dotfiles-dir "vendor/rsense/rsense-0.3"))
+(setq rsense-home (concat dotfiles-dir "vendor/rsense-0.3"))
 (add-to-list 'load-path (concat rsense-home "/etc"))
 (require 'rsense)
-(add-hook 'ruby-mode-hook
+;; auto start rsense completion after . and ::
+(add-hook 'ruby-mode-hook 
           (lambda ()
             (add-to-list 'ac-sources 'ac-source-rsense-method)
             (add-to-list 'ac-sources 'ac-source-rsense-constant)))
+
 ;;textmate mode
 (require 'textmate)
 (textmate-mode)
@@ -91,3 +78,10 @@
 (require 'ack-emacs)
 (require 'ack-in-project)
 
+;;buffer switching
+(defun switch-to-previous-buffer ()
+  (interactive)
+  (switch-to-buffer (other-buffer)))
+
+;;keybindings last
+(load-file "figs/keybindings.el")
