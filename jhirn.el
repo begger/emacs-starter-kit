@@ -84,4 +84,4 @@
   (switch-to-buffer (other-buffer)))
 
 ;;keybindings last
-(load-file "figs/keybindings.el")
+(load-file (concat dotfiles-dir "figs/keybindings.el"))
