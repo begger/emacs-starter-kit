@@ -23,16 +23,14 @@
   (set-frame-size (selected-frame) 1000 1000))
 
 
-(defun my-revert-buffer()
-  "revert buffer without asking for confirmation"
+(defun revert-non-interactive()
   (interactive "")
-  (revert-buffer t t)
-  )
+  (revert-buffer t t))
 
 
 ;;You are... so beautiful... to meeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 (pastels-color-theme)
-(set-frame-parameter (selected-frame) 'alpha '(94 75))
+(set-frame-parameter (selected-frame) 'alpha '(90 75))
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
@@ -70,11 +68,12 @@
 
 ;;yasnippet
 (require 'yasnippet)
+(yas/initialize)
 (yas/load-directory (concat dotfiles-dir "vendor/yasnippet-0.6.1c/snippets"))
 (yas/load-directory (concat dotfiles-dir "vendor/cucumber/snippets"))
-(yas/minor-mode-on)
 
-;;packin a mac in the back of the ack
+
+;;packin a ack in the back of the emacs
 (require 'ack-emacs)
 (require 'ack-in-project)
 

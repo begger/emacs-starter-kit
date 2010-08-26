@@ -11,7 +11,7 @@
 (global-set-key (kbd "M-l") 'goto-line)
 (global-set-key (kbd "C-S-f") 'indent-buffer)
 
-(global-set-key (kbd "C-x C-v") 'my-revert-buffer)
+(global-set-key (kbd "C-x C-v") 'revert-buffer-non-interactive)
 (global-set-key (kbd "C-;") 'switch-to-previous-buffer)
 (global-set-key (kbd "C-,") 'previous-buffer)
 (global-set-key (kbd "C-.") 'next-buffer)
