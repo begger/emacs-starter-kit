@@ -30,7 +30,7 @@
 
 ;;You are... so beautiful... to meeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 (pastels-color-theme)
-(set-frame-parameter (selected-frame) 'alpha '(90 75))
+(set-frame-parameter (selected-frame) 'alpha '(90 80))
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
@@ -71,6 +71,7 @@
 (yas/initialize)
 (yas/load-directory (concat dotfiles-dir "vendor/yasnippet-0.6.1c/snippets"))
 (yas/load-directory (concat dotfiles-dir "vendor/cucumber/snippets"))
+(yas/load-directory (concat dotfiles-dir "xtra-snippets"))
 
 
 ;;packin a ack in the back of the emacs
