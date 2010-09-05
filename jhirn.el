@@ -23,7 +23,7 @@
   (set-frame-size (selected-frame) 1000 1000))
 
 
-(defun revert-non-interactive()
+(defun revert-buffer-non-interactive()
   (interactive "")
   (revert-buffer t t))
 
