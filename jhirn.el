@@ -10,7 +10,7 @@
            "tidy.el"))
 
 
-;; Path fuckery thanks to OSX not honoring .bash_profiles... 
+;; Path fuckery thanks to OSX not honoring .bash_profiles...
 (setenv "PATH" (concat "/opt/local/bin" ":"
                        "/usr/local/bin" ":"
                        (getenv "PATH")))
@@ -57,7 +57,7 @@
 (add-to-list 'load-path (concat rsense-home "/etc"))
 (require 'rsense)
 ;; auto start rsense completion after . and ::
-(add-hook 'ruby-mode-hook 
+(add-hook 'ruby-mode-hook
           (lambda ()
             (add-to-list 'ac-sources 'ac-source-rsense-method)
             (add-to-list 'ac-sources 'ac-source-rsense-constant)))
