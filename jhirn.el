@@ -9,12 +9,11 @@
            "move-backups.el"
            "tidy.el"))
 
-
+(progn)
 ;; Path fuckery thanks to OSX not honoring .bash_profiles...
-(setenv "PATH" (concat "/opt/local/bin" ":"
-                       "/usr/local/bin" ":"
+(setenv "PATH" (concat "/usr/local/bin" ":"
                        (getenv "PATH")))
-(setq exec-path (append exec-path '("/opt/local/bin")))
+
 (setq exec-path (append exec-path '("/usr/local/mongo/bin")))
 
 (defun maximize-frame ()
@@ -26,7 +25,6 @@
 (defun revert-buffer-non-interactive()
   (interactive "")
   (revert-buffer t t))
-
 
 ;;You are... so beautiful... to meeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 (pastels-color-theme)
@@ -40,6 +38,8 @@
 
 ;;rvm-mode
 (require 'rvm)
+(rvm-use-default)
+
 
 ;;cucumber
 (require 'feature-mode)

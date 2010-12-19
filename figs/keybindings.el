@@ -7,9 +7,12 @@
  )
 
 (global-set-key (kbd "M-z") 'undo)
+(global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-/") 'comment-or-uncomment-region)
 (global-set-key (kbd "M-l") 'goto-line)
 (global-set-key (kbd "C-S-f") 'indent-buffer)
+(global-set-key (kbd "M-q")  'save-buffers-kill-terminal)
+(global-unset-key "\C-x \C-c")
 
 (global-set-key (kbd "C-x C-v") 'revert-buffer-non-interactive)
 (global-set-key (kbd "C-;") 'switch-to-previous-buffer)
