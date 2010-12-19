@@ -9,7 +9,7 @@
            "move-backups.el"
            "tidy.el"))
 
-(progn)
+
 ;; Path fuckery thanks to OSX not honoring .bash_profiles...
 (setenv "PATH" (concat "/usr/local/bin" ":"
                        (getenv "PATH")))
@@ -32,6 +32,11 @@
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
+;;mode-comiple
+(require 'mode-compile)
+(autoload 'mode-compile "mode-compile")
+
+(mode-compile)
 ;;rspec-mode
 (require 'rspec-mode)
 (rspec-mode)
@@ -47,31 +52,37 @@
 
 (server-start)
 
+;;yasnippet
+(require 'yasnippet)
+(setq yas/trigger-key (kbd "C-c ."))
+(yas/initialize)
+(yas/load-directory (concat dotfiles-dir "vendor/yasnippet-0.6.1c/snippets"))
+(yas/load-directory (concat dotfiles-dir "vendor/cucumber/snippets"))
+(yas/load-directory (concat dotfiles-dir "xtra-snippets"))
+
+
 ;;autocomplete
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories (concat dotfiles-dir "vendor/auto-complete-1.3/dict"))
+(add-to-list 'ac-dictionary-directories
+             (concat dotfiles-dir "vendor/auto-complete-1.3/dict"))
 (ac-config-default)
 
 ;;rsense
-(setq rsense-home (concat dotfiles-dir "vendor/rsense-0.3"))
+(setq rsense-home (concat dotfiles-dir "/vendor/rsense-0.3"))
 (add-to-list 'load-path (concat rsense-home "/etc"))
 (require 'rsense)
 ;; auto start rsense completion after . and ::
 (add-hook 'ruby-mode-hook
           (lambda ()
             (add-to-list 'ac-sources 'ac-source-rsense-method)
-            (add-to-list 'ac-sources 'ac-source-rsense-constant)))
+            (add-to-list 'ac-sources 'ac-source-rsense-constant)
+            (add-to-list 'ac-sources 'ac-source-yasnippet)))
+
+
 
 ;;textmate mode
 (require 'textmate)
 (textmate-mode)
-
-;;yasnippet
-(require 'yasnippet)
-(yas/initialize)
-(yas/load-directory (concat dotfiles-dir "vendor/yasnippet-0.6.1c/snippets"))
-(yas/load-directory (concat dotfiles-dir "vendor/cucumber/snippets"))
-(yas/load-directory (concat dotfiles-dir "xtra-snippets"))
 
 
 ;;packin a ack in the back of the emacs
