@@ -32,11 +32,6 @@
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-;;mode-comiple
-(require 'mode-compile)
-(autoload 'mode-compile "mode-compile")
-
-(mode-compile)
 ;;rspec-mode
 (require 'rspec-mode)
 (rspec-mode)
