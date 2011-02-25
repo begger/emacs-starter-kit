@@ -21,4 +21,5 @@ session*
 tramp
 \#*
 ac-comphist.dat
-.#jhirn.el
+autosaves/*
+.#*
