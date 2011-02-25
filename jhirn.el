@@ -6,7 +6,6 @@
 ;; Add my personal figs
 (map 'list (lambda (f) (load-file (concat  dotfiles-dir "/figs/" f)))
      (list "colors.el"
-           "move-backups.el"
            "tidy.el"))
 
 
@@ -83,6 +82,14 @@
 ;;packin a ack in the back of the emacs
 (require 'ack-emacs)
 (require 'ack-in-project)
+
+;;awww yeah, auto save. Let's see how this works
+ 
+;(require 'real-auto-save)
+;(add-hook 'text-mode-hook 'turn-on-real-auto-save)
+;(add-hook 'muse-mode-hook 'turn-on-real-auto-save)
+;(setq real-auto-save-interval 1)
+
 
 ;;buffer switching
 (defun switch-to-previous-buffer ()

@@ -39,7 +39,7 @@
 (defvar real-auto-save-alist nil
   "List of buffers that will be auto saved truely.")
 
-(defvar real-auto-save-interval 5
+(defvar real-auto-save-interval 10
   "Time interval of real auto save.")
 
 (defvar real-auto-save-p t
