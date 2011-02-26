@@ -6,6 +6,7 @@
 ;; Add my personal figs
 (map 'list (lambda (f) (load-file (concat  dotfiles-dir "/figs/" f)))
      (list "colors.el"
+           "move-backups.el"
            "tidy.el"))
 
 
@@ -89,7 +90,6 @@
 ;(add-hook 'text-mode-hook 'turn-on-real-auto-save)
 ;(add-hook 'muse-mode-hook 'turn-on-real-auto-save)
 ;(setq real-auto-save-interval 1)
-
 
 ;;buffer switching
 (defun switch-to-previous-buffer ()
