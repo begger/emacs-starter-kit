@@ -18,3 +18,15 @@
 (global-set-key (kbd "C-;") 'switch-to-previous-buffer)
 (global-set-key (kbd "C-,") 'previous-buffer)
 (global-set-key (kbd "C-.") 'next-buffer)
+
+(defun save-compile-and-send ()
+  (interactive)
+  (save-buffer)
+  (slime-compile-and-load-file))
+
+(add-hook 'clojure-mode-hook
+         (lambda ()
+            (message "dude I got activated")))
+
+
+
